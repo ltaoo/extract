@@ -52,13 +52,19 @@ function downloadFile(fileName, content){
     aLink.dispatchEvent(evt);
 }
 
+function handleTitle(title) {
+    // 文件名不能包含这些字符 \/：*？“<>|
+    var reg= /[\\\/\*\?\|\<\>\:]+/g;
+    title = title.replace(reg, '_');
+    return title += '.md';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(title, url) {
     renderStatus('Performing create file for ' + url + ' ...');
     // 内容
     var content = '[' + title + ']' + '(' + url + ')';
     // 先实现生成文件
-    title = title.replace(' ', '');
-    downloadFile(title + '.md', content);
+    downloadFile(handleTitle(title), content);
   });
 });
