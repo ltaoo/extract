@@ -1,13 +1,13 @@
+#app {
+	width: 300px;
+	height: 180px;
+}
 .download__source {
 	display: inline-block;
 	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-	color: #ccc;
+	color: #000;
 	font-size: 12px;
 	text-decoration: none;
-}
-.download__source:hover {
-	background-color: #3366ff;
-	color: #fff;
 }

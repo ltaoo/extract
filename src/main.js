@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // 内容
       const content = `[${title}](${url})`
       // 先实现生成文件
+      // 创建 a 标签
       const a = lib.createDownloadUrl(lib.handleFileName(title), content)
+      // 将标题作为 a 链接的文字
+      a.innerHTML = lib.handleFileName(title)
       // 将生成的 a 标签放入页面中
       const container = document.getElementById('app')
       container.innerHTML = ""
